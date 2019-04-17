@@ -91,7 +91,7 @@ $bdd = array(
             'marie'=>0,'naissance'=>'01/10/1976'),
     array('nom'=>'Allistair Winters','nomPays'=>'Kuwait',
             'marie'=>1,'naissance'=>'19/03/1987'),
-    array('nom'=>'Roary Golden','nomPays'=>'French Guiana',
+    array('nom'=>'Roary Golden','nomPays'=>'France',
             'marie'=>1,'naissance'=>'19/09/1995'),
     array('nom'=>'Idola Cantrell','nomPays'=>'Senegal',
             'marie'=>1,'naissance'=>'16/07/1992'),
