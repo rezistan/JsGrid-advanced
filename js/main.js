@@ -17,6 +17,7 @@ function chargerDonnees(lien) {
         url: lien,
         dataType: "json"
     }).done(function(response){
+        //console.log(response);
         listCountries(response);
         buildController(response);
         createGrid(response);
@@ -34,7 +35,7 @@ function buildController(datas){
             return $.grep(this.gens, function(pers) {
                 return (!filter.nom || pers.nom.toUpperCase().indexOf(filter.nom.toUpperCase()) > -1)
                     && (!filter.naissance || pers.naissance.indexOf(filter.naissance) > -1)
-                    && (!filter.pays || pers.pays.toUpperCase() === filter.pays.toUpperCase())
+                    && (!filter.pays || pers.pays === filter.pays)
                     && (filter.marie === undefined || pers.marie === filter.marie);
             });
         },
@@ -67,18 +68,27 @@ function createGrid(){
         controller: bd,
         fields: [
             { name: "nom", type: "text"},
-            { name: "pays", type: "text", items: listePays},
-            { name: "marié", type: "number"},
+            { name: "pays", type: "select", items: listePays, valueField: "id", textField: "name"},
+            { name: "marie", type: "number"},
             { name: "naissance", type: "text"}
         ]
     });
 }
 
 function listCountries(data){
+    var i = 1;
+    listePays.push({
+        id: 0,
+        name: "Tous"
+    });
     data.forEach(function(elem){
-        if(!listePays.includes(elem.pays)){
-            listePays.push(elem.pays);
+        if(!listePays.includes({id: elem.pays, name: elem.nomPays})){
+            listePays.push({
+                id: elem.pays,
+                name: elem.nomPays
+            });
+            i++;
         }
     });
-    listePays.sort();
+    console.log(listePays);
 }
