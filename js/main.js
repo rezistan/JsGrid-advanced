@@ -8,7 +8,7 @@ $(document).ready(function(){
 /**
  *
  * @param lien
- * @returns {never|*|{always, pipe, promise, state, catch, then}}
+ * @returns {{never || always, pipe, promise, state, catch, then}}
  */
 function chargerDonnees(lien) {
     var data = $.Deferred();
@@ -30,10 +30,11 @@ function chargerDonnees(lien) {
 function buildController(datas){
     bd = {
         loadData: function(filter) {
+            console.log(filter);
             return $.grep(this.gens, function(pers) {
-                return (!filter.nom || pers.nom.indexOf(filter.nom) > -1)
+                return (!filter.nom || pers.nom.toUpperCase().indexOf(filter.nom.toUpperCase()) > -1)
                     && (!filter.naissance || pers.naissance.indexOf(filter.naissance) > -1)
-                    && (!filter.pays || pers.pays === filter.pays)
+                    && (!filter.pays || pers.pays.toUpperCase() === filter.pays.toUpperCase())
                     && (filter.marie === undefined || pers.marie === filter.marie);
             });
         },
