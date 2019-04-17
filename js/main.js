@@ -31,7 +31,7 @@ function chargerDonnees(lien) {
 function buildController(datas){
     bd = {
         loadData: function(filter) {
-            console.log(filter);
+            //console.log(filter);
             return $.grep(this.gens, function(pers) {
                 return (!filter.nom || pers.nom.toUpperCase().indexOf(filter.nom.toUpperCase()) > -1)
                     && (!filter.naissance || pers.naissance.indexOf(filter.naissance) > -1)
@@ -75,20 +75,38 @@ function createGrid(){
     });
 }
 
+/**
+ *
+ * @param data
+ */
 function listCountries(data){
-    var i = 1;
-    listePays.push({
-        id: 0,
-        name: "Tous"
-    });
     data.forEach(function(elem){
-        if(!listePays.includes({id: elem.pays, name: elem.nomPays})){
+        //console.log(elem);
+        if(!listePays.some(e => e.id === elem.pays)){
             listePays.push({
                 id: elem.pays,
                 name: elem.nomPays
             });
-            i++;
         }
     });
-    console.log(listePays);
+    listePays.sort(compare);
+    listePays.unshift({
+        id: 0,
+        name: "Tous"
+    });
+    //console.log(listePays);
+}
+
+/**
+ * Pour la fonction de tri des pays
+ * @param a
+ * @param b
+ * @returns {number}
+ */
+function compare(a,b) {
+    if (a.name < b.name)
+        return -1;
+    if (a.name > b.name)
+        return 1;
+    return 0;
 }

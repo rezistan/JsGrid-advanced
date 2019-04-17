@@ -1,20 +1,6 @@
 <?php
 
 $bdd = array(
-    array('nom'=>'Geraldine Howard','nomPays'=>'Brunei',
-            'marie'=>1,'naissance'=>'02/04/1981'),
-    array('nom'=>'Candice Barnett','nomPays'=>'Niger',
-            'marie'=>0,'naissance'=>'16/10/1972'),
-    array('nom'=>'Denise Sherman','nomPays'=>'Uzbekistan',
-            'marie'=>1,'naissance'=>'23/09/1965'),
-    array('nom'=>'Nigel Donovan','nomPays'=>'Argentina',
-            'marie'=>0,'naissance'=>'22/07/1984'),
-    array('nom'=>'Kerry Richmond','nomPays'=>'Guinea-Bissau',
-            'marie'=>1,'naissance'=>'01/03/1987'),
-    array('nom'=>'Giselle Flowers','nomPays'=>'Nigeria',
-            'marie'=>0,'naissance'=>'03/11/1974'),
-    array('nom'=>'Theodore Lucas','nomPays'=>'Trinidad and Tobago',
-            'marie'=>1,'naissance'=>'31/12/1996'),
     array('nom'=>'Lael Bass','nomPays'=>'Belarus',
             'marie'=>0,'naissance'=>'05/08/1974'),
     array('nom'=>'Amy Ndiaye','nomPays'=>'Senegal',
@@ -37,6 +23,20 @@ $bdd = array(
             'marie'=>1,'naissance'=>'05/03/1972'),
     array('nom'=>'Jarrod Rios','nomPays'=>'Saint Martin',
             'marie'=>1,'naissance'=>'11/11/1994'),
+    array('nom'=>'Andoniaina Rantoson','nomPays'=>'Madagascar',
+        'marie'=>1,'naissance'=>'02/04/1981'),
+    array('nom'=>'Sonny Hu Thiong Feng Piou','nomPays'=>'Tibet',
+        'marie'=>0,'naissance'=>'16/10/1972'),
+    array('nom'=>'Ludovic Huguenot','nomPays'=>'France',
+        'marie'=>1,'naissance'=>'23/09/1965'),
+    array('nom'=>'Gauthier Bressanin','nomPays'=>'France',
+        'marie'=>0,'naissance'=>'22/07/1984'),
+    array('nom'=>'Lin Zhu','nomPays'=>'China',
+        'marie'=>1,'naissance'=>'01/03/1987'),
+    array('nom'=>'Giselle Flowers','nomPays'=>'Nigeria',
+        'marie'=>0,'naissance'=>'03/11/1974'),
+    array('nom'=>'Stephane Daude','nomPays'=>'France',
+        'marie'=>1,'naissance'=>'31/12/1996'),
     array('nom'=>'Emerson Rosa','nomPays'=>'Laos',
             'marie'=>1,'naissance'=>'21/12/1988'),
     array('nom'=>'Jorden Mccall','nomPays'=>'Bahrain',
@@ -202,5 +202,6 @@ foreach ($bdd as &$person){
         $person['pays'] = array_search($person['nomPays'], $listPays);
     }
 }
+unset($listPays);
 
 echo json_encode($bdd);
