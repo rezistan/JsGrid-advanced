@@ -61,13 +61,16 @@ function createGrid(){
             { name: "nom", type: "text"},
             { name: "pays", type: "select", items: listePays, valueField: "id", textField: "name"},
             { name: "majeur", type: "checkbox"},
-            { name: "mariage", type: "date", align: 'left' }
+            { name: "mariage", type: "date", align: 'left'}
         ],
         headerRowRenderer: function() {
-            var $result = $("<tr>").append($("<th>").attr("colspan", 2).text(""));
-            $result.append($("<th>").attr("colspan", 2).text("Mariage").css('text-align','center'));
-            $result = $result.add($("<tr>").append($("<th>").text("Nom").css('text-align','center')).append($("<th>").text("Pays").css('text-align','center'))
-                .append($("<th>").text("Majorité").css('text-align','center')).append($("<th>").text("Date").css('text-align','center')));
+            var $result = $("<tr>").append($("<th>").attr("colspan", 2));
+            $result.append($("<th>").attr("colspan", 2).text("Mariage"));
+            var secLine = $("<tr>").append($("<th>").text("Nom"));
+            secLine.append($("<th>").text("Pays"));
+            secLine.append($("<th>").text("Majorité"));
+            secLine.append($("<th>").text("Date"));
+            $result = $result.add(secLine);
             return $result;
         }
     });
