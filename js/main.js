@@ -2,6 +2,7 @@ var listePays = [];
 var bd;
 $(document).ready(function(){
     chargerDonnees('php/data.php');
+    createGrid();
 });
 
 /**
@@ -18,6 +19,7 @@ function chargerDonnees(lien) {
     }).done(function(response){
         listCountries(response);
         buildController(response);
+        createGrid();
     });
     return data.promise();
 }
@@ -42,15 +44,12 @@ function buildController(datas){
         }
     };
     bd.gens = datas;
-
-
-    createGrid(bd);
 }
 
 /**
  *
  */
-function createGrid(bd){
+function createGrid(){
     $('#gridPers').jsGrid({
         width: '100%',
         filtering: true,
@@ -62,15 +61,15 @@ function createGrid(bd){
             { name: "nom", type: "text"},
             { name: "pays", type: "select", items: listePays, valueField: "id", textField: "name"},
             { name: "majeur", type: "checkbox"},
-            { name: "mariage", type: "date", align: 'center' }
+            { name: "mariage", type: "date", align: 'left' }
         ],
-        /*headerRowRenderer: function() {
+        headerRowRenderer: function() {
             var $result = $("<tr>").append($("<th>").attr("colspan", 2).text(""));
             $result.append($("<th>").attr("colspan", 2).text("Mariage").css('text-align','center'));
             $result = $result.add($("<tr>").append($("<th>").text("Nom").css('text-align','center')).append($("<th>").text("Pays").css('text-align','center'))
                 .append($("<th>").text("Majorité").css('text-align','center')).append($("<th>").text("Date").css('text-align','center')));
             return $result;
-        }*/
+        }
     });
 
     var dateField = function(config) {
