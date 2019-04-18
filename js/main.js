@@ -17,7 +17,6 @@ function chargerDonnees(lien) {
         url: lien,
         dataType: "json"
     }).done(function(response){
-        //console.log(response);
         listCountries(response);
         buildController(response);
         createGrid(response);
@@ -31,12 +30,16 @@ function chargerDonnees(lien) {
 function buildController(datas){
     bd = {
         loadData: function(filter) {
-            console.log(filter);
+            var timeFrom = new Date(filter.mariage.from).getTime();
+            var timeTo = new Date(filter.mariage.to).getTime();
             return $.grep(this.gens, function(pers) {
+                //formattage de la date
+                var asDate = pers.mariage.split('/');
+                var dateN = new Date(asDate[2], asDate[1]-1, asDate[0]);
                 return (!filter.nom || pers.nom.toUpperCase().indexOf(filter.nom.toUpperCase()) > -1)
-                    && (!filter.naissance.date || new Date(pers.naissance).getTime() === new Date(filter.naissance.date).getTime())
+                    && (!filter.mariage.from || !filter.mariage.to || (dateN.getTime() >= timeFrom && dateN.getTime() <= timeTo))
                     && (!filter.pays || pers.pays === filter.pays)
-                    && (!filter.marie || pers.marie === filter.marie);
+                    && (filter.marie === undefined|| pers.marie === filter.marie);
             });
         }
     };
@@ -48,36 +51,6 @@ function buildController(datas){
  *
  */
 function createGrid(){
-    var DateField = function(config) {
-        jsGrid.Field.call(this, config);
-    };
-
-    DateField.prototype = new jsGrid.Field({
-        sorter: function(date1, date2) {
-            return new Date(date1) - new Date(date2);
-        },
-
-        itemTemplate: function(value) {
-            var asDate = value.split('/');
-            return new Date(asDate[2], asDate[1]-1, asDate[0]).toLocaleDateString();
-        },
-
-        filterTemplate: function() {
-            this._datePicker = $("<input>").datepicker({dateFormat: 'dd/mm/yy'});
-            return $("<div>").append(this._datePicker);
-        },
-
-        filterValue: function() {
-            /*var asDate = this._datePicker.datepicker("getDate").split('/');
-            return new Date(asDate[2], asDate[1]-1, asDate[0]).toLocaleDateString();*/
-            return {
-                date: this._datePicker.datepicker("getDate")
-            };
-        }
-    });
-
-    jsGrid.fields.date = DateField;
-
     $('#gridPers').jsGrid({
         width: '100%',
         filtering: true,
@@ -88,10 +61,50 @@ function createGrid(){
         fields: [
             { name: "nom", type: "text"},
             { name: "pays", type: "select", items: listePays, valueField: "id", textField: "name"},
-            { name: "marie", type: "number"},
-            { name: "naissance", type: "date"}
+            { name: "marie", type: "checkbox"},
+            { name: "mariage", type: "date"}
         ]
     });
+
+    var dateField = function(config) {
+        jsGrid.Field.call(this, config);
+    };
+
+    dateField.prototype = new jsGrid.Field({
+        sorter: function(date1, date2) {
+            return new Date(date1) - new Date(date2);
+        },
+
+        itemTemplate: function(value) {
+            return value;
+        },
+
+        filterTemplate: function() {
+            var grid = this._grid;
+
+            this._dateDebut = $("<input>").datepicker({dateFormat: 'dd/mm/yy'});
+            this._dateFin = $("<input>").datepicker({dateFormat: 'dd/mm/yy'});
+            this._dateDebut.add(this._dateFin).on('change', function () {
+                grid.search();
+            });
+            this._dateDebut.add(this._dateFin).on('keydown', function (e) {
+                if(e.keyCode === 8){
+                    this.value = '';
+                    grid.search();
+                }
+            });
+            return $("<div>").append('Du :').append(this._dateDebut).append('Au :').append(this._dateFin);
+        },
+
+        filterValue: function() {
+            return {
+                from: this._dateDebut.datepicker("getDate"),
+                to: this._dateFin.datepicker("getDate")
+            };
+        }
+    });
+
+    jsGrid.fields.date = dateField;
 }
 
 /**
@@ -100,7 +113,6 @@ function createGrid(){
  */
 function listCountries(data){
     data.forEach(function(elem){
-        //console.log(elem);
         if(!listePays.some(e => e.id === elem.pays)){
             listePays.push({
                 id: elem.pays,
@@ -113,7 +125,6 @@ function listCountries(data){
         id: 0,
         name: "Tous"
     });
-    //console.log(listePays);
 }
 
 /**
