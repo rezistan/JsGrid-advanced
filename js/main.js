@@ -2,7 +2,6 @@ var listePays = [];
 var bd;
 $(document).ready(function(){
     chargerDonnees('php/data.php');
-    createGrid();
 });
 
 /**
@@ -19,13 +18,12 @@ function chargerDonnees(lien) {
     }).done(function(response){
         listCountries(response);
         buildController(response);
-        createGrid(response);
     });
     return data.promise();
 }
 
 /**
- *
+ * Fonction de filtrage pour la recherche
  */
 function buildController(datas){
     bd = {
@@ -33,7 +31,7 @@ function buildController(datas){
             var timeFrom = new Date(filter.mariage.from).getTime();
             var timeTo = new Date(filter.mariage.to).getTime();
             return $.grep(this.gens, function(pers) {
-                //formattage de la date
+                //formatage de la date
                 var asDate = pers.mariage.split('/');
                 var dateN = new Date(asDate[2], asDate[1]-1, asDate[0]);
                 return (!filter.nom || pers.nom.toUpperCase().indexOf(filter.nom.toUpperCase()) > -1)
@@ -44,12 +42,15 @@ function buildController(datas){
         }
     };
     bd.gens = datas;
+
+
+    createGrid(bd);
 }
 
 /**
  *
  */
-function createGrid(){
+function createGrid(bd){
     $('#gridPers').jsGrid({
         width: '100%',
         filtering: true,
@@ -61,8 +62,15 @@ function createGrid(){
             { name: "nom", type: "text"},
             { name: "pays", type: "select", items: listePays, valueField: "id", textField: "name"},
             { name: "majeur", type: "checkbox"},
-            { name: "mariage", type: "date"}
-        ]
+            { name: "mariage", type: "date", align: 'center' }
+        ],
+        /*headerRowRenderer: function() {
+            var $result = $("<tr>").append($("<th>").attr("colspan", 2).text(""));
+            $result.append($("<th>").attr("colspan", 2).text("Mariage").css('text-align','center'));
+            $result = $result.add($("<tr>").append($("<th>").text("Nom").css('text-align','center')).append($("<th>").text("Pays").css('text-align','center'))
+                .append($("<th>").text("Majorité").css('text-align','center')).append($("<th>").text("Date").css('text-align','center')));
+            return $result;
+        }*/
     });
 
     var dateField = function(config) {
