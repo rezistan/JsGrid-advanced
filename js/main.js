@@ -39,12 +39,11 @@ function buildController(datas){
                 return (!filter.nom || pers.nom.toUpperCase().indexOf(filter.nom.toUpperCase()) > -1)
                     && (!filter.mariage.from || !filter.mariage.to || (dateN.getTime() >= timeFrom && dateN.getTime() <= timeTo))
                     && (!filter.pays || pers.pays === filter.pays)
-                    && (filter.marie === undefined|| pers.marie === filter.marie);
+                    && (filter.majeur === undefined|| pers.majeur === filter.majeur);
             });
         }
     };
     bd.gens = datas;
-    bd.countries = listePays;
 }
 
 /**
@@ -61,7 +60,7 @@ function createGrid(){
         fields: [
             { name: "nom", type: "text"},
             { name: "pays", type: "select", items: listePays, valueField: "id", textField: "name"},
-            { name: "marie", type: "checkbox"},
+            { name: "majeur", type: "checkbox"},
             { name: "mariage", type: "date"}
         ]
     });
@@ -85,8 +84,10 @@ function createGrid(){
 
         filterTemplate: function() {
             var grid = this._grid;
+
             this._dateDebut = $("<input>").datepicker({dateFormat: 'dd/mm/yy'});
             this._dateFin = $("<input>").datepicker({dateFormat: 'dd/mm/yy'});
+
             this._dateDebut.add(this._dateFin).on('change', function () {
                 grid.search();
             });
@@ -96,6 +97,7 @@ function createGrid(){
                     grid.search();
                 }
             });
+
             return $("<div>").append('Du :').append(this._dateDebut).append('Au :').append(this._dateFin);
         },
 
