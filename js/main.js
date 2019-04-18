@@ -72,7 +72,11 @@ function createGrid(){
 
     dateField.prototype = new jsGrid.Field({
         sorter: function(date1, date2) {
-            return new Date(date1) - new Date(date2);
+            var asDate1 = date1.split('/');
+            var asDate2 = date2.split('/');
+            var tDate1 = new Date(asDate1[2], asDate1[1]-1, asDate1[0]);
+            var tDate2 = new Date(asDate2[2], asDate2[1]-1, asDate2[0]);
+            return tDate1 - tDate2;
         },
 
         itemTemplate: function(value) {
@@ -81,7 +85,6 @@ function createGrid(){
 
         filterTemplate: function() {
             var grid = this._grid;
-
             this._dateDebut = $("<input>").datepicker({dateFormat: 'dd/mm/yy'});
             this._dateFin = $("<input>").datepicker({dateFormat: 'dd/mm/yy'});
             this._dateDebut.add(this._dateFin).on('change', function () {
