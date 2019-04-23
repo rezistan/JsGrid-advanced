@@ -81,6 +81,9 @@ function createGrid(ctrl){
             { name: "majeur", type: "checkbox"},
             { name: "mariage", type: "date", align: 'center'}
         ],
+        onRefreshed: function(){
+            $('#selectPays').selectpicker()
+        },
         headerRowRenderer: function() {
             var $result = $("<tr>").append($("<th rowspan='2'>").text("Nom"));
             $result.append($("<th rowspan='2' class='coucou'>").text("Pays"));
@@ -93,7 +96,7 @@ function createGrid(ctrl){
             grid._eachField(function (field, index) {
                 if(grid.sorting){
                     //console.log(this);
-                    $('<th>').on('click', function (e) {
+                    $('<th>').on('click', function () {
                         console.log(this);
                         grid.sort(index);
                     });
@@ -125,7 +128,7 @@ function customMultiSelect(){
         _createSelect: function(grid, selected) {
             var textField = this.textField;
             var valueField = this.valueField;
-            var $result = $("<select multiple='multiple' class='selectpicker' data-container='body'>");
+            var $result = $("<select id='selectPays' multiple='multiple' class='selectpicker' data-container='body'>");
             $.each(this.items, function(_, item) {
                 var text = item[textField];
                 var val = item[valueField];
@@ -262,5 +265,4 @@ function compare(a,b) {
 
 $(document).ready(function(){
     chargerDonnees('php/data.php');
-    createGrid();
 });
