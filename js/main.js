@@ -14,20 +14,10 @@ function chargerDonnees(lien) {
         dataType: "json"
     }).done(function(response){
         listCountries(response);
-        updateGridData(response);
+        var controller = buildController(response);
+        createGrid(controller);
     });
     return data.promise();
-}
-
-/**
- * Update datas
- */
-function updateGridData(data){
-    var grid = $("#gridPers").data("JSGrid");
-    grid.controller = buildController(data);
-    console.log(grid.controller);
-    $("#gridPers").jsGrid('refresh');
-    grid.refresh();
 }
 
 /**
@@ -44,7 +34,7 @@ function buildController(datas){
                 var dateN = new Date(asDate[2], asDate[1]-1, asDate[0]);
                 return (!filter.nom || pers.nom.toUpperCase().indexOf(filter.nom.toUpperCase()) > -1)
                     && ((!filter.mariage.from && !filter.mariage.to) || dateRange(timeFrom, timeTo, dateN))
-                    && (filter.pays.length === 0 || filter.pays.includes(pers.pays.toString()))
+                    && (filter.pays.length === 0 || filter.pays.includes(pers.pays.toString()) || filter.pays.includes('0'))
                     && (filter.majeur === undefined|| pers.majeur === filter.majeur);
             });
         }
@@ -77,12 +67,14 @@ function dateRange(from, to, date){
 /**
  *
  */
-function createGrid(){
+function createGrid(ctrl){
+    gridConfig();
     $('#gridPers').jsGrid({
         width: '100%',
         filtering: true,
         sorting: true,
         autoload: true,
+        controller: ctrl,
         fields: [
             { name: "nom", type: "text"},
             { name: "pays", type: "multiselect", items: listePays, valueField: "id", textField: "name"},
@@ -97,23 +89,90 @@ function createGrid(){
             secLine.append($("<th>").text("Date"));
             $result = $result.add(secLine);
 
-            /*var grid = this;
+            var grid = this;
             grid._eachField(function (field, index) {
                 if(grid.sorting){
-                    console.log(this);
+                    //console.log(this);
                     $('<th>').on('click', function (e) {
                         console.log(this);
                         grid.sort(index);
                     });
                 }
-            });*/
+            });
 
             return $result;
         }
     });
+}
 
-    console.log($("#gridPers").data("JSGrid").controller);
+$('.coucou').click(function () {
+    console.log('yes');
+});
 
+/**
+ * champ custom du multiselect
+ */
+function customMultiSelect(){
+    var multiselectField = function(config) {
+        jsGrid.Field.call(this, config);
+    };
+
+    multiselectField.prototype = new jsGrid.Field({
+        item: [],
+        textField: "",
+        valueField: "",
+
+        _createSelect: function(grid, selected) {
+            var textField = this.textField;
+            var valueField = this.valueField;
+            var $result = $("<select multiple='multiple' class='selectpicker'>");
+            $.each(this.items, function(_, item) {
+                var text = item[textField];
+                var val = item[valueField];
+                var $opt = $("<option>").val(val).text(text);
+                if($.inArray(val, selected) > -1) {
+                    $opt.attr("selected", "selected");
+                }
+
+                $result.append($opt);
+            });
+
+            $result.on('change', function () {
+                grid.search();
+            });
+
+            return $result;
+        },
+
+        itemTemplate: function(value) {
+            for(var i in listePays){
+                if(listePays[i].id === value){
+                    return listePays[i].name;
+                }
+            }
+        },
+
+        filterTemplate: function() {
+            return this._filterControl = this._createSelect(this._grid);
+        },
+
+        filterValue: function() {
+            var selected = [];
+            this._filterControl.find("option:selected").map(function() {
+                this.selected ? selected.push($(this).val()) : null;
+            });
+            return selected;
+        }
+
+    });
+
+    jsGrid.fields.multiselect = multiselectField;
+}
+
+/**
+ * champ custom de la date
+ */
+function customDate(){
     var dateField = function(config) {
         jsGrid.Field.call(this, config);
     };
@@ -159,62 +218,14 @@ function createGrid(){
     });
 
     jsGrid.fields.date = dateField;
+}
 
-    var multiselectField = function(config) {
-        jsGrid.Field.call(this, config);
-    };
-
-    multiselectField.prototype = new jsGrid.Field({
-        item: [],
-        textField: "",
-        valueField: "",
-
-        _createSelect: function(grid, selected) {
-            var textField = this.textField;
-            var valueField = this.valueField;
-            var $result = $("<select multiple class='selectpicker'>");
-
-            $.each(this.items, function(_, item) {
-                var text = item[textField];
-                var val = item[valueField];
-                var $opt = $("<option>").val(val).text(text);
-                if($.inArray(val, selected) > -1) {
-                    $opt.attr("selected", "selected");
-                }
-
-                $result.append($opt);
-            });
-
-            $result.on('change', function () {
-                grid.search();
-            });
-
-            return $result;
-        },
-
-        itemTemplate: function(value) {
-            for(var i in listePays){
-                if(listePays[i].id === value){
-                    return listePays[i].name;
-                }
-            }
-        },
-
-        filterTemplate: function() {
-            return this._filterControl = this._createSelect(this._grid);
-        },
-
-        filterValue: function() {
-            var selected = [];
-            this._filterControl.find("option:selected").map(function() {
-                this.selected ? selected.push($(this).val()) : null;
-            });
-            return selected;
-        }
-
-    });
-
-    jsGrid.fields.multiselect = multiselectField;
+/**
+ * Champs custom du jsGrid
+ */
+function gridConfig(){
+    customMultiSelect();
+    customDate();
 }
 
 
@@ -232,6 +243,10 @@ function listCountries(data){
         }
     });
     listePays.sort(compare);
+    listePays.unshift({
+        id: '0',
+        name: 'Tous'
+    })
 }
 
 /**
@@ -250,6 +265,6 @@ function compare(a,b) {
 
 
 $(document).ready(function(){
-    createGrid();
     chargerDonnees('php/data.php');
+    createGrid([]);
 });
