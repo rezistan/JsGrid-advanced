@@ -1,9 +1,5 @@
 var listePays = [];
-var bd;
-$(document).ready(function(){
-    chargerDonnees('php/data.php');
-    createGrid();
-});
+
 
 /**
  *
@@ -18,17 +14,27 @@ function chargerDonnees(lien) {
         dataType: "json"
     }).done(function(response){
         listCountries(response);
-        buildController(response);
-        createGrid();
+        updateGridData(response);
     });
     return data.promise();
+}
+
+/**
+ * Update datas
+ */
+function updateGridData(data){
+    var grid = $("#gridPers").data("JSGrid");
+    grid.controller = buildController(data);
+    console.log(grid.controller);
+    $("#gridPers").jsGrid('refresh');
+    grid.refresh();
 }
 
 /**
  * Fonction de filtrage pour la recherche
  */
 function buildController(datas){
-    bd = {
+    var bd = {
         loadData: function(filter) {
             var timeFrom = new Date(filter.mariage.from).getTime();
             var timeTo = new Date(filter.mariage.to).getTime();
@@ -44,6 +50,8 @@ function buildController(datas){
         }
     };
     bd.gens = datas;
+
+    return bd;
 }
 
 /**
@@ -64,6 +72,8 @@ function dateRange(from, to, date){
     return date.getTime() >= from && date.getTime() <= to;
 }
 
+
+
 /**
  *
  */
@@ -73,34 +83,36 @@ function createGrid(){
         filtering: true,
         sorting: true,
         autoload: true,
-
-        controller: bd,
         fields: [
             { name: "nom", type: "text"},
             { name: "pays", type: "multiselect", items: listePays, valueField: "id", textField: "name"},
             { name: "majeur", type: "checkbox"},
-            { name: "mariage", type: "date", align: 'left'}
+            { name: "mariage", type: "date", align: 'center'}
         ],
-        _sortData: function() {
-            var sortFactor = this._sortFactor(),
-                sortField = this._sortField;
-
-            if (sortField) {
-                this.data.sort(function(item1, item2) {
-                    return sortFactor * sortField.sortingFunc(item1[sortField.name], item2[sortField.name]);
-                });
-            }
-        },
         headerRowRenderer: function() {
             var $result = $("<tr>").append($("<th rowspan='2'>").text("Nom"));
-            $result.append($("<th rowspan='2'>").text("Pays"));
+            $result.append($("<th rowspan='2' class='coucou'>").text("Pays"));
             $result.append($("<th colspan='2'>").text("Mariage"));
             var secLine = $("<tr>").append($("<th>").text("Majorité"));
             secLine.append($("<th>").text("Date"));
             $result = $result.add(secLine);
+
+            /*var grid = this;
+            grid._eachField(function (field, index) {
+                if(grid.sorting){
+                    console.log(this);
+                    $('<th>').on('click', function (e) {
+                        console.log(this);
+                        grid.sort(index);
+                    });
+                }
+            });*/
+
             return $result;
         }
     });
+
+    console.log($("#gridPers").data("JSGrid").controller);
 
     var dateField = function(config) {
         jsGrid.Field.call(this, config);
@@ -122,8 +134,8 @@ function createGrid(){
         filterTemplate: function() {
             var grid = this._grid;
 
-            this._dateDebut = $("<input>").datepicker({dateFormat: 'dd/mm/yy'});
-            this._dateFin = $("<input>").datepicker({dateFormat: 'dd/mm/yy'});
+            this._dateDebut = $("<input>").width(103).datepicker({format: 'dd/mm/yyyy', horizontal: 'left', vertical: 'bottom'});
+            this._dateFin = $("<input>").width(103).datepicker({format: 'dd/mm/yyyy'});
 
             this._dateDebut.add(this._dateFin).on('change', function () {
                 grid.search();
@@ -135,7 +147,7 @@ function createGrid(){
                 }
             });
 
-            return $("<div>").append('Du :').append(this._dateDebut).append('Au :').append(this._dateFin);
+            return $("<div>").append('du ').append(this._dateDebut).append(' au ').append(this._dateFin);
         },
 
         filterValue: function() {
@@ -205,6 +217,7 @@ function createGrid(){
     jsGrid.fields.multiselect = multiselectField;
 }
 
+
 /**
  *
  * @param data
@@ -234,3 +247,9 @@ function compare(a,b) {
         return 1;
     return 0;
 }
+
+
+$(document).ready(function(){
+    createGrid();
+    chargerDonnees('php/data.php');
+});
