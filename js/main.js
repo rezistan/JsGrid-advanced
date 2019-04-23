@@ -1,6 +1,5 @@
 var listePays = [];
 
-
 /**
  *
  * @param lien
@@ -21,7 +20,8 @@ function chargerDonnees(lien) {
 }
 
 /**
- * Fonction de filtrage pour la recherche
+ * Fonction de remplissage des données
+ * et de filtrage pour la recherche
  */
 function buildController(datas){
     var bd = {
@@ -34,7 +34,7 @@ function buildController(datas){
                 var dateN = new Date(asDate[2], asDate[1]-1, asDate[0]);
                 return (!filter.nom || pers.nom.toUpperCase().indexOf(filter.nom.toUpperCase()) > -1)
                     && ((!filter.mariage.from && !filter.mariage.to) || dateRange(timeFrom, timeTo, dateN))
-                    && (filter.pays.length === 0 || filter.pays.includes(pers.pays.toString()) || filter.pays.includes('0'))
+                    && (filter.pays.length === 0 || filter.pays.includes(pers.pays.toString()))
                     && (filter.majeur === undefined|| pers.majeur === filter.majeur);
             });
         }
@@ -125,7 +125,7 @@ function customMultiSelect(){
         _createSelect: function(grid, selected) {
             var textField = this.textField;
             var valueField = this.valueField;
-            var $result = $("<select multiple='multiple' class='selectpicker'>");
+            var $result = $("<select multiple='multiple' class='selectpicker' data-container='body'>");
             $.each(this.items, function(_, item) {
                 var text = item[textField];
                 var val = item[valueField];
@@ -243,10 +243,6 @@ function listCountries(data){
         }
     });
     listePays.sort(compare);
-    listePays.unshift({
-        id: '0',
-        name: 'Tous'
-    })
 }
 
 /**
@@ -266,5 +262,5 @@ function compare(a,b) {
 
 $(document).ready(function(){
     chargerDonnees('php/data.php');
-    createGrid([]);
+    createGrid();
 });
