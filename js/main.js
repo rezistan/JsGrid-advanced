@@ -82,7 +82,11 @@ function createGrid(ctrl){
             { name: "mariage", type: "date", align: 'center'}
         ],
         onRefreshed: function(){
-            $('#selectPays').selectpicker()
+            $('#selectPays').selectpicker({
+                noneSelectedText: "Aucun",
+                selectAllText: 'Tous',
+                deselectAllText: 'Aucun'
+            })
         },
         headerRowRenderer: function() {
             var $result = $("<tr>").append($("<th rowspan='2'>").text("Nom"));
@@ -95,8 +99,7 @@ function createGrid(ctrl){
             var grid = this;
             grid._eachField(function (field, index) {
                 if(grid.sorting){
-                    //console.log(this);
-                    $('<th>').on('click', function () {
+                    $('th').on('click', function () {
                         console.log(this);
                         grid.sort(index);
                     });
@@ -128,7 +131,7 @@ function customMultiSelect(){
         _createSelect: function(grid, selected) {
             var textField = this.textField;
             var valueField = this.valueField;
-            var $result = $("<select id='selectPays' multiple='multiple' class='selectpicker' data-container='body'>");
+            var $result = $("<select id='selectPays' multiple data-container='body' data-actions-box=\"true\" data-size='10'>");
             $.each(this.items, function(_, item) {
                 var text = item[textField];
                 var val = item[valueField];
