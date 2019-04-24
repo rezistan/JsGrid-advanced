@@ -102,18 +102,16 @@ function createGrid(ctrl){
             $(document).on('click', '.jsgrid-table tr th', function (e) {
                 var index = e.currentTarget.id;
                 if(grid.sorting && !isNaN(parseInt(index))){
-                    var elem = document.getElementById(index);
                     grid.sort(index);
                     //customisation des icones de tri
-                    console.log(elem.className);
+                    var elem = document.getElementById(index);
                     if (elem.className.includes('desc')) {
+                        $('.asc').add($('.desc')).removeClass('asc').removeClass('desc');
                         elem.classList.add('desc');
-                        elem.classList.remove('asc');
                     } else {
+                        $('.asc').add($('.desc')).removeClass('asc').removeClass('desc');
                         elem.classList.add('asc');
-                        elem.classList.remove('desc');
                     }
-                    console.log(elem);
                 }
             });
             return $result;
