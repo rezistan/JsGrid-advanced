@@ -190,16 +190,14 @@ $bdd = array(
 );
 
 $listPays = [];
-$i=1;
+foreach ($bdd as $person){
+    if(!in_array($person['nomPays'], $listPays)) {
+        $listPays[] = $person['nomPays'];
+    }
+}
+sort($listPays);
 foreach ($bdd as &$person){
-    if(in_array($person['nomPays'], $listPays)) {
-        $person['pays'] = array_search($person['nomPays'], $listPays);
-    }
-    else {
-        $listPays[$i] = $person['nomPays'];
-        $person['pays'] = $i;
-        $i++;
-    }
+    $person['pays'] = array_search($person['nomPays'], $listPays);
 }
 unset($listPays);
 

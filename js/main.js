@@ -74,6 +74,8 @@ function createGrid(ctrl){
         filtering: true,
         sorting: true,
         autoload: true,
+        paging: true,
+        pageSize: 18,
         controller: ctrl,
         fields: [
             { name: "nom", type: "text"},
@@ -86,34 +88,38 @@ function createGrid(ctrl){
                 noneSelectedText: "Aucun",
                 selectAllText: 'Tous',
                 deselectAllText: 'Aucun'
-            })
+            });
         },
         headerRowRenderer: function() {
-            var $result = $("<tr>").append($("<th rowspan='2'>").text("Nom"));
-            $result.append($("<th rowspan='2' class='coucou'>").text("Pays"));
+            var $result = $("<tr>").append($("<th id='0' rowspan='2'>").text("Nom"));
+            $result.append($("<th id='1' rowspan='2'>").text("Pays"));
             $result.append($("<th colspan='2'>").text("Mariage"));
-            var secLine = $("<tr>").append($("<th>").text("Majorité"));
-            secLine.append($("<th>").text("Date"));
+            var secLine = $("<tr>").append($("<th id='2'>").text("Majorité"));
+            secLine.append($("<th id='3'>").text("Date"));
             $result = $result.add(secLine);
 
             var grid = this;
-            grid._eachField(function (field, index) {
-                if(grid.sorting){
-                    $('th').on('click', function () {
-                        console.log(this);
-                        grid.sort(index);
-                    });
+            $(document).on('click', '.jsgrid-table tr th', function (e) {
+                var index = e.currentTarget.id;
+                if(grid.sorting && !isNaN(parseInt(index))){
+                    var elem = document.getElementById(index);
+                    grid.sort(index);
+                    //customisation des icones de tri
+                    console.log(elem.className);
+                    if (elem.className.includes('desc')) {
+                        elem.classList.add('desc');
+                        elem.classList.remove('asc');
+                    } else {
+                        elem.classList.add('asc');
+                        elem.classList.remove('desc');
+                    }
+                    console.log(elem);
                 }
             });
-
             return $result;
         }
     });
 }
-
-$('.coucou').click(function () {
-    console.log('yes');
-});
 
 /**
  * champ custom du multiselect
@@ -131,7 +137,7 @@ function customMultiSelect(){
         _createSelect: function(grid, selected) {
             var textField = this.textField;
             var valueField = this.valueField;
-            var $result = $("<select id='selectPays' multiple data-container='body' data-actions-box=\"true\" data-size='10'>");
+            var $result = $("<select id='selectPays' multiple data-container='body' data-actions-box='true' data-size='12'>");
             $.each(this.items, function(_, item) {
                 var text = item[textField];
                 var val = item[valueField];
@@ -148,6 +154,10 @@ function customMultiSelect(){
             });
 
             return $result;
+        },
+
+        sorter: function(p1, p2){
+            return p1-p2;
         },
 
         itemTemplate: function(value) {
