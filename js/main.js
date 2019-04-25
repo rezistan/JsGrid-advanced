@@ -13,8 +13,7 @@ function chargerDonnees(lien) {
         dataType: "json"
     }).done(function (response) {
         listCountries(response);
-        let controller = buildController(response);
-        createGrid(controller);
+        createGrid(response);
     });
     return data.promise();
 }
@@ -24,7 +23,8 @@ function chargerDonnees(lien) {
  * et de filtrage pour la recherche
  */
 function buildController(datas) {
-    let bd = {
+    return {
+        gens: datas,
         loadData: function (filter) {
             let timeFrom = new Date(filter.mariage.from).getTime();
             let timeTo = new Date(filter.mariage.to).getTime();
@@ -39,9 +39,6 @@ function buildController(datas) {
             });
         }
     };
-    bd.gens = datas;
-
-    return bd;
 }
 
 /**
@@ -66,7 +63,7 @@ function dateRange(from, to, date) {
  * Creation du grid avec les donnees
  * du controlleur en parametres
  */
-function createGrid(ctrl) {
+function createGrid(data) {
     customMultiSelect();
     customDateField();
     $('#gridPers').jsGrid({
@@ -77,7 +74,7 @@ function createGrid(ctrl) {
         editing: true,
         paging: true,
         pageSize: 18,
-        controller: ctrl,
+        controller: buildController(data),
         fields: [
             {name: "nom", type: "text"},
             {name: "pays", type: "multiselect", items: listePays, valueField: "id", textField: "name"},
@@ -107,6 +104,7 @@ function createGrid(ctrl) {
                 if (grid.sorting && !isNaN(parseInt(index))) {
                     let prevSort = $('#gridPers').jsGrid('getSorting');
                     grid.sort(index);
+
                     //customisation des icones de tri
                     $('.asc').add($('.desc')).removeClass('asc').removeClass('desc');
                     let elem = document.getElementById(index);
@@ -147,7 +145,6 @@ function customMultiSelect() {
                 if ($.inArray(val, selected) > -1) {
                     $opt.attr("selected", "selected");
                 }
-
                 $result.append($opt);
             });
 
@@ -232,8 +229,10 @@ function customDateField() {
         filterTemplate: function () {
             let grid = this._grid;
 
-            this._dateDebut = $("<input>").width(103).datepicker({format: 'dd/mm/yyyy'});
-            this._dateFin = $("<input>").width(103).datepicker({format: 'dd/mm/yyyy'});
+            let debut = $("<input>").width(103).attr('placeholder', 'du');
+            this._dateDebut = debut.datepicker({format: 'dd/mm/yyyy'});
+            let fin = $("<input>").width(103).attr('placeholder', 'au');
+            this._dateFin = fin.datepicker({format: 'dd/mm/yyyy'});
 
             this._dateDebut.add(this._dateFin).on('change', function () {
                 grid.search();
@@ -256,8 +255,8 @@ function customDateField() {
         editTemplate: function(value) {
             let tabVal = value.split('/');
             let newVal = tabVal[1] + '/' + tabVal[0] + '/' + tabVal[2];
-            let picker = $("<input>").datepicker({format: 'dd/mm/yyyy'}).datepicker("setDate", new Date(newVal));
-            return this._editPicker = picker;
+            let picker = $("<input>").datepicker({format: 'dd/mm/yyyy'});
+            return this._editPicker = picker.datepicker("setDate", new Date(newVal));
         },
 
         editValue: function() {
@@ -270,12 +269,13 @@ function customDateField() {
 }
 
 /**
- *
+ *  Construction liste des pays pour jsGrid
  * @param data
  */
 function listCountries(data) {
     data.forEach(function (elem) {
         if (!listePays.some(e => e.id === elem.pays)) {
+            //ajouter le pays s'il n'est pas encore dans la liste
             listePays.push({
                 id: elem.pays,
                 name: elem.nomPays
