@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9c6666a8-818a-4287-b56e-b5a92cf0a753" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/AUTHORS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_444444_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_555555_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_777620_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_777777_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_cc0000_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_ffffff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/data.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/data.php" afterDir="false" />
+    </list>
+    <list id="aa1c30db-bcb1-4a19-9486-71f5aecea5b8" name="Revert &quot;customizing sorting icons on progress 2&quot;" comment="letification du code" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-405">
+              <caret line="253" selection-start-line="253" selection-end-line="253" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/data.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1509">
+              <caret line="572" selection-start-line="572" selection-end-line="572" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>,&quot;m</find>
+      <find>senegal</find>
+      <find>clients</find>
+      <find>client</find>
+      <find>db</find>
+      <find>Name</find>
+      <find>marié</find>
+      <find>&quot;</find>
+      <find>pays</find>
+      <find>idPays</find>
+      <find>yy</find>
+      <find>=&gt;1</find>
+      <find>=&gt;0</find>
+      <find>DateField</find>
+      <find>[0-9]</find>
+      <find>19[0-7][0-9]</find>
+      <find>19[0-9][0-9]</find>
+      <find>naissance</find>
+      <find>'</find>
+      <find>_datePicker2</find>
+      <find>_datePicker</find>
+      <find>countries</find>
+      <find>marie</find>
+      <find>.css('text-align','center')</find>
+      <find>build</find>
+      <find>bd</find>
+      <find>Senegal</find>
+      <find>customDate</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="nslas" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/php/data.php" />
+        <option value="$PROJECT_DIR$/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="854" />
+    <option name="y" value="-23" />
+    <option name="width" value="974" />
+    <option name="height" value="1087" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9c6666a8-818a-4287-b56e-b5a92cf0a753" name="Default Changelist" comment="" />
+      <created>1555415190399</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555415190399</updated>
+      <workItem from="1555415191645" duration="10947000" />
+      <workItem from="1555427661280" duration="279000" />
+      <workItem from="1555428095573" duration="1679000" />
+      <workItem from="1555486218240" duration="9673000" />
+      <workItem from="1555496448192" duration="42000" />
+      <workItem from="1555503670593" duration="9898000" />
+      <workItem from="1555573597463" duration="6359000" />
+      <workItem from="1555588108091" duration="8287000" />
+      <workItem from="1555601781635" duration="11000" />
+      <workItem from="1555601842416" duration="914000" />
+      <workItem from="1555658625557" duration="21776000" />
+      <workItem from="1556004518412" duration="7688000" />
+      <workItem from="1556019874256" duration="5964000" />
+      <workItem from="1556031479372" duration="4138000" />
+      <workItem from="1556091487807" duration="6814000" />
+      <workItem from="1556106624666" duration="13550000" />
+      <workItem from="1556175698533" duration="9277000" />
+      <workItem from="1556193016014" duration="1877000" />
+    </task>
+    <task id="LOCAL-00001" summary="1st commit_Unstable">
+      <created>1555427801579</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555427801579</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Unstable">
+      <created>1555428241752</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555428241752</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Filtering partially working">
+      <created>1555429761407</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555429761407</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Filtering case unsensitive">
+      <created>1555487230861</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555487230861</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Filtering select working">
+      <created>1555494187552</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555494187552</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Filtering select working">
+      <created>1555494213653</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555494213653</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Sorted countries name">
+      <created>1555496469441</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555496469441</updated>
+    </task>
+    <task id="LOCAL-00008" summary="filtering date">
+      <created>1555515846868</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555515846868</updated>
+    </task>
+    <task id="LOCAL-00009" summary="filtering date">
+      <created>1555515911423</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1555515911423</updated>
+    </task>
+    <task id="LOCAL-00010" summary="filtering date, married, name &amp; country ok">
+      <created>1555595300135</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1555595300135</updated>
+    </task>
+    <task id="LOCAL-00011" summary="date sorter bug fix">
+      <created>1555595656079</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1555595656079</updated>
+    </task>
+    <task id="LOCAL-00012" summary="optimized">
+      <created>1555596526240</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1555596526240</updated>
+    </task>
+    <task id="LOCAL-00013" summary="bug select date">
+      <created>1555599804378</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1555599804378</updated>
+    </task>
+    <task id="LOCAL-00014" summary="resolved bug select date">
+      <created>1555600232992</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1555600232992</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Working colspan">
+      <created>1555602697829</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1555602697829</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Multiselect and date filtering">
+      <created>1555676199857</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1555676199857</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Creation puis update not working">
+      <created>1556006491014</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1556006491014</updated>
+    </task>
+    <task id="LOCAL-00018" summary="bug multiselect">
+      <created>1556022432738</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1556022432739</updated>
+    </task>
+    <task id="LOCAL-00019" summary="working double createGrid">
+      <created>1556025049512</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1556025049512</updated>
+    </task>
+    <task id="LOCAL-00020" summary="working with onRefreshed">
+      <created>1556032886374</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1556032886374</updated>
+    </task>
+    <task id="LOCAL-00021" summary="translated filter pays">
+      <created>1556035601033</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1556035601033</updated>
+    </task>
+    <task id="LOCAL-00022" summary="customizing sorting icons">
+      <created>1556115527746</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1556115527746</updated>
+    </task>
+    <task id="LOCAL-00023" summary="customizing sorting icons on progress">
+      <created>1556118107018</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1556118107018</updated>
+    </task>
+    <task id="LOCAL-00024" summary="customizing sorting icons on progress 2">
+      <created>1556118574643</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1556118574643</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Editing grid">
+      <created>1556179593463</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1556179593463</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Editing grid done">
+      <created>1556184393931</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1556184393931</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Sorting icon bug fix">
+      <created>1556186803502</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1556186803502</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Cleaned code">
+      <created>1556194423889</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1556194423889</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="119173000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.5127932" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32917964" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32917964" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32917964" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.5131291" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+    <MESSAGE value="Filtering partially working" />
+    <MESSAGE value="Filtering case unsensitive" />
+    <MESSAGE value="Filtering select working" />
+    <MESSAGE value="Sorted countries name" />
+    <MESSAGE value="filtering date" />
+    <MESSAGE value="filtering date, married, name &amp; country ok" />
+    <MESSAGE value="date sorter bug fix" />
+    <MESSAGE value="optimized" />
+    <MESSAGE value="bug select date" />
+    <MESSAGE value="resolved bug select date" />
+    <MESSAGE value="Working colspan" />
+    <MESSAGE value="Multiselect and date filtering" />
+    <MESSAGE value="Creation puis update not working" />
+    <MESSAGE value="bug multiselect" />
+    <MESSAGE value="working double createGrid" />
+    <MESSAGE value="working with onRefreshed" />
+    <MESSAGE value="translated filter pays" />
+    <MESSAGE value="customizing sorting icons" />
+    <MESSAGE value="customizing sorting icons on progress" />
+    <MESSAGE value="customizing sorting icons on progress 2" />
+    <MESSAGE value="letification du code" />
+    <MESSAGE value="Editing grid" />
+    <MESSAGE value="Editing grid done" />
+    <MESSAGE value="Sorting icon bug fix" />
+    <MESSAGE value="Cleaned code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned code" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/libs/Chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="360" column="12" selection-start-line="360" selection-start-column="12" selection-end-line="360" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/libs/jsgrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="754" column="8" selection-start-line="754" selection-start-column="8" selection-end-line="754" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1509">
+          <caret line="572" selection-start-line="572" selection-end-line="572" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405">
+          <caret line="253" selection-start-line="253" selection-end-line="253" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
