@@ -567,7 +567,9 @@ foreach ($bdd as $person) {
         $listPays[] = $person['nomPays'];
     }
 }
+
 sort($listPays);
+
 foreach ($bdd as &$person) {
     $person['pays'] = array_search($person['nomPays'], $listPays);
 }
