@@ -96,7 +96,7 @@ function createGrid(ctrl) {
             let $result = $("<tr>").append($("<th id='0' rowspan='2'>").text("Nom"));
             $result.append($("<th id='1' rowspan='2'>").text("Pays"));
             $result.append($("<th colspan='2'>").text("Mariage"));
-            $result.append($("<th>").text("options").width(120));
+            $result.append($("<th rowspan='2'>").text("options").width(120));
             let secLine = $("<tr>").append($("<th id='2'>").text("Majorité"));
             secLine.append($("<th id='3'>").text("Date"));
             $result = $result.add(secLine);
@@ -105,14 +105,15 @@ function createGrid(ctrl) {
             $(document).on('click', '.jsgrid-table tr th', function (e) {
                 let index = e.currentTarget.id;
                 if (grid.sorting && !isNaN(parseInt(index))) {
+                    let prevSort = $('#gridPers').jsGrid('getSorting');
                     grid.sort(index);
                     //customisation des icones de tri
+                    $('.asc').add($('.desc')).removeClass('asc').removeClass('desc');
                     let elem = document.getElementById(index);
-                    if (elem.className.includes('-desc')) {
-                        $('.asc').add($('.desc')).removeClass('asc').removeClass('desc');
+                    if(prevSort.field === grid.fields[index].name && prevSort.order === 'asc'){
                         elem.classList.add('desc');
-                    } else {
-                        $('.asc').add($('.desc')).removeClass('asc').removeClass('desc');
+                    }
+                    else{
                         elem.classList.add('asc');
                     }
                 }
