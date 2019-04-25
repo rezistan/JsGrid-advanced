@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c6666a8-818a-4287-b56e-b5a92cf0a753" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/AUTHORS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/external/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_444444_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_555555_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_777620_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_777777_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_cc0000_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/images/ui-icons_ffffff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.structure.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.structure.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/jquery-ui.theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/libs/jquery-ui-1.12.1/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/data.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/data.php" afterDir="false" />
-    </list>
+    <list default="true" id="9c6666a8-818a-4287-b56e-b5a92cf0a753" name="Default Changelist" comment="File reorganization" />
     <list id="aa1c30db-bcb1-4a19-9486-71f5aecea5b8" name="Revert &quot;customizing sorting icons on progress 2&quot;" comment="letification du code" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="748">
+              <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -207,7 +185,7 @@
       <workItem from="1556091487807" duration="6814000" />
       <workItem from="1556106624666" duration="13550000" />
       <workItem from="1556175698533" duration="9277000" />
-      <workItem from="1556193016014" duration="1877000" />
+      <workItem from="1556193016014" duration="2131000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit_Unstable">
       <created>1555427801579</created>
@@ -405,11 +383,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556194423889</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="File reorganization">
+      <created>1556194989113</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1556194989113</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119173000" />
+    <option name="totallyTimeSpent" value="119427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -475,7 +460,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Filtering partially working" />
     <MESSAGE value="Filtering case unsensitive" />
     <MESSAGE value="Filtering select working" />
     <MESSAGE value="Sorted countries name" />
@@ -500,7 +484,8 @@
     <MESSAGE value="Editing grid done" />
     <MESSAGE value="Sorting icon bug fix" />
     <MESSAGE value="Cleaned code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned code" />
+    <MESSAGE value="File reorganization" />
+    <option name="LAST_COMMIT_MESSAGE" value="File reorganization" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -550,8 +535,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="748">
+          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
         </state>
       </provider>
     </entry>
