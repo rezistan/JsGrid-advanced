@@ -14,3 +14,7 @@
 .desc:after{
     content: " ▼";
 }
+
+.bootstrap-select .dropdown-menu {
+    margin-top: 95px;
+}

@@ -137,7 +137,7 @@ function customMultiSelect() {
         _createSelect: function (grid, selected) {
             let textField = this.textField;
             let valueField = this.valueField;
-            let $result = $("<select multiple data-container='body' data-actions-box='true' data-size='12'>");
+            let $result = $("<select multiple data-container='body' data-actions-box='true' data-size='12' data-live-search='true'>");
             $.each(this.items, function (_, item) {
                 let text = item[textField];
                 let val = item[valueField];
