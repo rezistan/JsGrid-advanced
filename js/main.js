@@ -68,7 +68,7 @@ function dateRange(from, to, date) {
  */
 function createGrid(ctrl) {
     customMultiSelect();
-    customDate();
+    customDateField();
     $('#gridPers').jsGrid({
         width: '100%',
         filtering: true,
@@ -179,6 +179,27 @@ function customMultiSelect() {
                 this.selected ? selected.push($(this).val()) : null;
             });
             return selected;
+        },
+
+        editTemplate: function(value) {
+            let select = $("<select>");
+            listePays.forEach(function (pays) {
+                let opt = $("<option>").val(pays.id).text(pays.name);
+                if (value === pays.id) {
+                    opt.attr("selected", "selected");
+                }
+                select.append(opt);
+            });
+            return this._editPicker = select;
+        },
+
+        editValue: function() {
+            let select = this._editPicker[0];
+            for(let i=0; i<select.length; i++){
+                if(select[i] && select[i].selected) {
+                    return parseInt(select[i].value);
+                }
+            }
         }
 
     });
@@ -189,7 +210,7 @@ function customMultiSelect() {
 /**
  * champ custom de la date
  */
-function customDate() {
+function customDateField() {
     let dateField = function (config) {
         jsGrid.Field.call(this, config);
     };
@@ -221,7 +242,6 @@ function customDate() {
                     this.value = '';
                 }
             });
-
             return $("<div>").append(this._dateDebut).append(' - ').append(this._dateFin);
         },
 
@@ -235,7 +255,8 @@ function customDate() {
         editTemplate: function(value) {
             let tabVal = value.split('/');
             let newVal = tabVal[1] + '/' + tabVal[0] + '/' + tabVal[2];
-            return this._editPicker = $("<input>").datepicker({format: 'dd/mm/yyyy'}).datepicker("setDate", new Date(newVal));
+            let picker = $("<input>").datepicker({format: 'dd/mm/yyyy'}).datepicker("setDate", new Date(newVal));
+            return this._editPicker = picker;
         },
 
         editValue: function() {
